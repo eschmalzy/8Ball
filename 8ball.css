@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  height: auto;
+  width: auto;
+}
+
+#ball {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+  margin: auto;
+  background: radial-gradient(circle at 100px 100px, #555, #000);
+  box-shadow: 0 20px 50px -50px black;
+}
+
+#small-ball{
+  transform: translate(0, 85%);
+  margin:auto;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background: #3000ff;
+  border-radius: 90px;
+  border: 4px solid #171717;
+  display: table;
+}
+
+#answer {
+  vertical-align: middle;
+  margin:auto;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  overflow: auto;
+  display:table-cell;
+}
+
+#history {
+  text-align: left;
+  list-style: none;
+  margin-left: 30%;
+}
+
+button {
+  margin: 3%;
+}
