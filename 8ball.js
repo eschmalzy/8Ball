@@ -9,20 +9,30 @@ askButton.onclick = function (){
   message.innerHTML = answerObj.answer;
   message.style.color = answerObj.color;
   recordMessage(answerObj.answer);
+  document.getElementById("question").value = "";
 };
 
 var recordMessage = function (answer) {
-  var question = document.getElementById('question');
+  var question = document.getElementById("question");
   //find container
   var history = document.getElementById("history");
   //create child element
-  var historyList = document.createElement("li");
+  var historyList1 = document.createElement("li");
+  var historyList2 = document.createElement("li");
   //configure child element
-  historyList.innerHTML ="Question: "+ question.value + " Answer: " + answer;
+  historyList1.innerHTML = "Question: "+ question.value
+  historyList2.innerHTML = "Answer: " + answer;
   //append child element
-  history.appendChild(historyList);
+  history.appendChild(historyList1);
+  history.appendChild(historyList2);
 };
-
+document.getElementById("question")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        document.getElementById("ask-button").click();
+    }
+});
 var request = new XMLHttpRequest();
 request.onreadystatechange = function (){
   if (request.readyState == XMLHttpRequest.DONE){
@@ -35,5 +45,5 @@ request.onreadystatechange = function (){
   }
 };
 
-request.open("GET", "https://api.myjson.com/bins/562e6");
+request.open("GET", "https://api.myjson.com/bins/562e6 ");
 request.send();
