@@ -1,4 +1,3 @@
-document.body.style.background = "#888";
 var askButton = document.getElementById('ask-button');
 var messages = null;
 
